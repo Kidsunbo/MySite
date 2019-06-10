@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -23,9 +24,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'dzqz#y2c&hk0%h*9sww_(=otl3zczqq4*^(e(o=ur0nw9sx-yx'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['kies.herokuapp.com','127.0.0.1']
+ALLOWED_HOSTS = ['kies.herokuapp.com']
 
 
 # Application definition
@@ -47,6 +48,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'mysite.urls'
@@ -116,5 +118,18 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
-
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
+
+# Extra places for collectstatic to find static files.
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
+
+# Simplified static file serving.
+# https://warehouse.python.org/project/whitenoise/
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+
+django_heroku.settings(locals())
