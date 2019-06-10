@@ -1,5 +1,6 @@
 div {
     margin: 0px auto;
     color: red;
-    width: min-content;
+    width: max-content;
+    border: solid 1px black;
 }
