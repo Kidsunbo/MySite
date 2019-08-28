@@ -6,4 +6,7 @@ import math
 
 def index(request):
     r = random.random()
-    return render(request,'homepage/RayCasting.html')
+    if r>=0.5:
+        return render(request,'homepage/BeautifulBubbles.html')
+    else:
+        return render(request,'homepage/RayCasting.html')

@@ -7,7 +7,11 @@ window.addEventListener('mousemove',ev => {
 });
 
 window.addEventListener('resize',ev => {
-    location.reload();
+    walls = walls.slice(0,4);
+    walls.push([0,0,window.innerWidth,0]);
+    walls.push([window.innerWidth,0,window.innerWidth,window.innerHeight]);
+    walls.push([window.innerWidth,window.innerHeight,0,window.innerHeight]);
+    walls.push([0,window.innerHeight,0,0]);
 });
 
 let canvas = document.getElementById('main');
