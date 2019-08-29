@@ -14,7 +14,7 @@ let g = canvas.getContext('2d');
 class Circle{
     constructor(i){
         this.radius = i*20+20;
-        this.circleRadius = 10;
+        this.circleRadius = 5;
         this.angle = Math.random()*360;
         this.color = `rgb(${Math.floor(Math.random()*255)},${Math.floor(Math.random()*255)},${Math.floor(Math.random()*255)})`;
     }
@@ -26,6 +26,7 @@ class Circle{
         g.fill();
         g.closePath();
         this.angle+=1;
+        if(this.angle===360) this.angle=0;
     }
 }
 
@@ -57,7 +58,7 @@ function init() {
 function main() {
     document.getElementById('propagation').style.color = `rgba(${Math.floor(mouseX / canvas.width * 255)},${Math.floor(mouseY / canvas.height * 255)},${Math.floor((mouseX / canvas.width * 255 + mouseY / canvas.height * 255) / 2)},255)`;
     g.beginPath();
-    g.fillStyle = 'rgba(0,0,0,0.005)';
+    g.fillStyle = 'rgba(0,0,0,0.05)';
     g.rect(0, 0, canvas.width, canvas.height);
     g.fill();
     g.closePath();
