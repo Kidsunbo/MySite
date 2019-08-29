@@ -38,7 +38,6 @@ class MoveCircle{
         }
         if ((Math.abs(this.x - mouseX) > 100 || Math.abs(this.y - mouseY) > 100) && this.radius > this.minRad) {
             this.radius -= this.changeSpeed;
-            console.log(this.minRad,this.radius);
             this.radius = Math.max(2,this.radius);
         }
         if ((this.x + this.radius) >= window.innerWidth) this.h = -this.moveSpeed;

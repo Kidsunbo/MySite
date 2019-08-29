@@ -5,8 +5,9 @@ import math
 # Create your views here.
 
 def index(request):
-    r = random.random()
-    if r>=0.5:
-        return render(request,'homepage/BeautifulBubbles.html')
-    else:
-        return render(request,'homepage/RayCasting.html')
+    page = random.choice([
+        'homepage/BeautifulBubbles.html',
+        'homepage/RayCasting.html',
+        'homepage/Circles.html',
+    ])
+    return render(request,page)
