@@ -33,7 +33,7 @@
         </div>
         <div id="class_assignment" class="collapse" aria-labelledby="class_assignment_heading">
             <div class="card-body">
-                <form action="{% url 'infoManage:学生分配' student.id %}" method="post">
+                <form action="{% url 'ray:学生分配' student.id %}" method="post">
                     {% csrf_token %}
                     <div class="form-inline">
                         <label class="my-1 mr-2" for="{{ student_assign_form.班编号.id_for_label }}"> 选择班级 </label>
@@ -55,7 +55,7 @@
                         <span class="badge badge-pill badge-{{ class_state_color.pop }}">{{ class_assign.上课日期 }}</span>
                         ->
                         <span class="badge badge-pill badge-{{ class_state_color.pop }}">{{ class_assign.结课日期 }}</span>
-                        <a href="{% url 'infoManage:班信息' class_assign.班编号.id %}">{{ class_assign.班编号.班名称 }}</a>
+                        <a href="{% url 'ray:班信息' class_assign.班编号.id %}">{{ class_assign.班编号.班名称 }}</a>
                     </li>
                 {% endfor %}
             {% else %}
@@ -76,7 +76,7 @@
         </div>
         <div id="parent_contact" class="collapse" aria-labelledby="parent_contact_heading">
             <div class="card-body">
-                <form action="{% url 'infoManage:新联系方式' student.id %}" method="post">
+                <form action="{% url 'ray:新联系方式' student.id %}" method="post">
                     {% csrf_token %}
                     <div class="form-inline">
                         <label class="my-1 mr-2" for="{{ parent_contact_form.家长姓名.id_for_label }}"> 家长姓名 </label>
@@ -116,7 +116,7 @@
         </div>
         <div id="student_payment_old" class="collapse" aria-labelledby="student_payment_heading">
             <div class="card-body">
-                <form method="post" action="{% url 'infoManage:老生缴费' student.id %}">
+                <form method="post" action="{% url 'ray:老生缴费' student.id %}">
                     {% csrf_token %}
                     <div class="form-row align-items-left">
                         <div class="form-group col-auto">
@@ -142,7 +142,7 @@
                         缴费时间:
                         <span class="badge badge-info">{{ record.缴费时间 }}</span>
                         {{ record.缴费项目 }} {{ record.缴费金额 }}
-                        <a href="{% url 'infoManage:缴费详单' record.id %}">{{ record.缴费编号 }}</a>
+                        <a href="{% url 'ray:缴费详单' record.id %}">{{ record.缴费编号 }}</a>
                     </li>
                 {% endfor %}
             {% else %}

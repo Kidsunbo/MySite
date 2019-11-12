@@ -12,7 +12,7 @@
 {% block mainbody %}
     <br>
     <div>
-        <a class="btn btn-primary" href="{% url 'infoManage:新班' %}" role="button">新班</a>
+        <a class="btn btn-primary" href="{% url 'ray:新班' %}" role="button">新班</a>
     </div>
     <br>
     <div class="table-responsive">
@@ -33,7 +33,7 @@
                 <tr>
                     <th scope="row">{{ forloop.counter }}</th>
                     <td>{{ class.id }}</td>
-                    <td><a href="{% url 'infoManage:班信息' class.id %}">{{ class.班名称 }}</a></td>
+                    <td><a href="{% url 'ray:班信息' class.id %}">{{ class.班名称 }}</a></td>
                     <td>{{ class.上课时间 }}</td>
                     <td>{{ class.上课教室 }}</td>
                     <td>{{ class.老师编号 }}</td>

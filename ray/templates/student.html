@@ -28,7 +28,7 @@
                 <tr>
                     <th scope="row">{{ forloop.counter }}</th>
                     <td>{{ student.id }}</td>
-                    <td><a href="{% url 'infoManage:学生信息' student.id %}">{{ student.学生姓名 }}</a></td>
+                    <td><a href="{% url 'ray:学生信息' student.id %}">{{ student.学生姓名 }}</a></td>
                     <td>{{ student.学生性别 }}</td>
                     <td>{{ birthday.pop }}</td>
                     <td>{{ student.学生生日 }}</td>

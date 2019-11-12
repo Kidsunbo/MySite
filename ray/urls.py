@@ -1,7 +1,7 @@
 from django.urls import path
 from . import views
 
-app_name = 'infoManage'
+app_name = 'ray'
 urlpatterns = [
     path('', views.home, name='主页'),
 
