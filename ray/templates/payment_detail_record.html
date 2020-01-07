@@ -25,7 +25,7 @@
             </p>
             <p class="card-text">实际缴费：{{ payment_record.缴费金额 }}</p>
             <p class="card-text">学生：<a
-                    href="{% url 'ray:学生信息' payment_record.缴费学生.id %}">{{ payment_record.缴费学生 }}</a></p>
+                    href="{% url 'infoManage:学生信息' payment_record.缴费学生.id %}">{{ payment_record.缴费学生 }}</a></p>
             <p class="card-text">时间：{{ payment_record.缴费时间 }}</p>
         </div>
     </div>
@@ -66,10 +66,10 @@
     <form name="form_edit" action="" method="post">
         {% csrf_token %}
         <button type="button" class="btn btn-danger"
-                onclick="modifyFormAction('{% url 'ray:缴费详单删除' payment_record.id %}')">删除这个订单
+                onclick="modifyFormAction('{% url 'infoManage:缴费详单删除' payment_record.id %}')">删除这个订单
         </button>
         <button type="button" class="btn btn-primary"
-                onclick="modifyFormAction('{% url 'ray:缴费详单编辑' payment_record.id %}')">编辑这个订单
+                onclick="modifyFormAction('{% url 'infoManage:缴费详单编辑' payment_record.id %}')">编辑这个订单
         </button>
     </form>
 

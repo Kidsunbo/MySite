@@ -12,8 +12,8 @@
 {% block mainbody %}
     <br>
     <div>
-        <a class="btn btn-primary" href="{% url 'ray:新生缴费' %}" role="button">新生缴费</a>
-        <a class="btn btn-primary" href="{% url 'ray:学生' %}" role="button">老生续费</a>
+        <a class="btn btn-primary" href="{% url 'infoManage:新生缴费' %}" role="button">新生缴费</a>
+        <a class="btn btn-primary" href="{% url 'infoManage:学生' %}" role="button">老生续费</a>
     </div>
     <br>
     <div class="table-responsive">
@@ -32,7 +32,7 @@
             {% for record in payment_records %}
                 <tr>
                     <th scope="row">{{ forloop.counter }}</th>
-                    <td><a href="{% url 'ray:缴费详单' record.id %}">{{ payment_converted_id.pop }}</a></td>
+                    <td><a href="{% url 'infoManage:缴费详单' record.id %}">{{ payment_converted_id.pop }}</a></td>
                     <td>{{ record.缴费学生.学生姓名 }}</td>
                     <td>{{ record.缴费时间 }}</td>
                     <td>{{ record.缴费项目 }}</td>

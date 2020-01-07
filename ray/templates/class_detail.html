@@ -41,7 +41,7 @@
                     <tr>
                         <th scope="row">{{ forloop.counter }}</th>
                         <td>{{ student.学生编号.id }}</td>
-                        <td><a href="{% url 'ray:学生信息' student.学生编号.id %}">{{ student.学生编号.学生姓名 }}</a></td>
+                        <td><a href="{% url 'infoManage:学生信息' student.学生编号.id %}">{{ student.学生编号.学生姓名 }}</a></td>
                         <td>{{ student.学生编号.学生性别 }}</td>
                         <td>{{ student_age.pop }}</td>
                     </tr>
