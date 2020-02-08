@@ -73,8 +73,6 @@ class City{
 }
 
 class Hospital extends Point{
-    static HOSPITAL_X = window.innerWidth-300;
-    static HOSPITAL_Y = 80;
     constructor() {
         super(Hospital.HOSPITAL_X, Hospital.HOSPITAL_Y + 10);
         this.width = 0;
@@ -111,7 +109,8 @@ class Hospital extends Point{
     }
 }
 
-
+    Hospital.HOSPITAL_X = window.innerWidth-300;
+    Hospital.HOSPITAL_Y = 80;
 
 function stdGaussian(std_dev,mean){
     return (randomNormalDistribution()*std_dev)+mean;
