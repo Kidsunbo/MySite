@@ -1,0 +1,83 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>呆在家乖乖听话哦，各位</title>
+    <style>
+        html,body {
+            margin: 0px;
+            overflow: hidden;
+        }
+
+        #main{
+            display: block;
+            margin: 0px;
+            padding: 0px;
+            background-color: #444444;
+        }
+
+        #ControlPad{
+            margin: 20px;
+        }
+
+        label,span{
+            color:white;
+        }
+    </style>
+</head>
+<body>
+<canvas id="main"></canvas>
+
+<div id="ControlPad" style="position: absolute;top:1%;">
+<label for="population">人数(个):</label>
+    <span id="vpopulation">1000</span>
+    <br/>
+    <input id="population" type="range" value="1000" min="1000" max="5000" step="100" oninput="valueChanged('population')">
+    <br/>
+<label for="spreadRate">传播率:</label>
+    <span id="vspreadRate">0.8</span>
+    <br/>
+    <input id="spreadRate" type="range" value="0.8" min="0" max="1" step="0.01" oninput="valueChanged('spreadRate')">
+        <br/>
+<label for="shadow">潜伏时间(天):</label>
+    <span id="vshadow">14 </span>
+    <br/>
+    <input id="shadow" type="range" value="14" min="0" max="30" step="1" oninput="valueChanged('shadow')">
+        <br/>
+<label for="receiveTime">医院响应时间(天):</label>
+    <span id="vreceiveTime">10</span>
+    <br/>
+    <input id="receiveTime" type="range" value="10" min="0" max="30" step="1" oninput="valueChanged('receiveTime')">
+            <br/>
+<label for="bedNumber">医院床位(个):</label>
+    <span id="vbedNumber">100</span>
+    <br/>
+    <input id="bedNumber" type="range" value="100" min="0" max="1000" step="10" oninput="valueChanged('bedNumber')">
+    <br/>
+    <label for="moveRate">流动意向:</label>
+    <span id="vmoveRate">0.99</span>
+    <br/>
+    <input id="moveRate" type="range" value="0.99" min="-0.99" max="0.99" step="0.01" oninput="valueChanged(this.id)">
+    <br/>
+    <label for="originalNumber">初始感染数量:</label>
+    <span id="voriginalNumber">100</span>
+    <br/>
+    <input id="originalNumber" type="range" value="100" min="0" step="1" oninput="valueChanged(this.id)">
+    <script>
+        document.getElementById("originalNumber").max = document.getElementById("population").value;
+    </script>
+    <br/>
+    <label for="fatalityRate">病死率(0至1):</label>
+    <span id="vfatalityRate">0.5</span>
+    <br/>
+    <input id="fatalityRate" type="range" value="0.5" min="0" max="1" step="0.01" oninput="valueChanged(this.id)">
+    <br/>
+    <input type="button"  value="开始" onclick="startTheWorld()">
+
+</div>
+
+<script src="{% static 'homepage/js/Virus.js' %}"></script>
+</body>
+</html>

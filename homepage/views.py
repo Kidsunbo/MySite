@@ -11,3 +11,6 @@ def index(request):
         'homepage/Circles.html',
     ])
     return render(request,page)
+
+def virus(request):
+    return render(request,"homepage/Virus.html")

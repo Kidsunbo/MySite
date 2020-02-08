@@ -17,5 +17,7 @@ from django.contrib import admin
 from django.urls import path,re_path
 from . import views
 urlpatterns = [
-    re_path(r'(?!admin/)', views.index),
+    path(r'virus/', views.virus),
+    path(r'2019nCov/', views.virus),
+    re_path(r'(?![admin|virus|2019nCov]/)', views.index),
 ]
