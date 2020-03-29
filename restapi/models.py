@@ -6,14 +6,13 @@ raym_token = hashlib.sha256("Raym".encode('utf-8')).hexdigest()
 
 # Create your models here.
 class RecordModel(models.Model):
-    id = models.AutoField(primary_key=True)
     date = models.DateField("Record Date")
     AAT = models.IntegerField("AAT Number")
     essay = models.IntegerField("Essay Number")
     other = models.IntegerField("Other Number")
     coding = models.IntegerField("Coding Number")
-    note = models.CharField(verbose_name="Note",max_length=140,default="")
-    token = models.CharField(verbose_name="Token",max_length=100,default="")
+    note = models.CharField(verbose_name="Note",max_length=140)
+    token = models.CharField(verbose_name="Token",max_length=100)
 
     def __str__(self):
         if self.token ==kie_token:
