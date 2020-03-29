@@ -6,7 +6,6 @@ raym_token = hashlib.sha256("Raym".encode('utf-8')).hexdigest()
 
 # Create your models here.
 class RecordModel(models.Model):
-    id = models.AutoField(primary_key=True)
     date = models.DateField("Record Date")
     AAT = models.IntegerField("AAT Number")
     essay = models.IntegerField("Essay Number")
