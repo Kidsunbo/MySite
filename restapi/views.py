@@ -1,6 +1,5 @@
 from django.shortcuts import render
 import json
-import hashlib
 from django.http import HttpResponse
 from .models import RecordModel,kie_token,raym_token
 
